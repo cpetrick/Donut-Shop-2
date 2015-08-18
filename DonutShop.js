@@ -8,7 +8,7 @@ var shop = {
 	maxCustHour: '43',
 	avgDonPerCust: '4.5',
 
-	donutsPerHour: function( {
+	donutsPerHour: function ( {
 		return this.
 	})
 }
