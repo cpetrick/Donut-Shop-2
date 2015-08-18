@@ -24,12 +24,15 @@ function Shop(name, minCustHour, maxCustHour, avgDonPerCust, totalHour ) {
 		return avgDonPerHour;
 	}
 	this.donutsPerDay = function(){
+		console.log("Donut Production for" + this.name);
 		for (var hour = 0; hour < this.totalHour; hour++) {
 			var donutsforHour = this.donutsPerHour();
 			this.totalDonuts += donutsforHour;
 			this.hourlyDonuts.push(donutsforHour);
+		console.log("   Donuts for hour " + hour + " are " + donutsforHour);
 		}
-		console.log(this.totalDonuts);
+		console.log("Total Donuts per day for " + this.name + " is " + this.totalDonuts + "\n");
+		
 	}
 }
 
