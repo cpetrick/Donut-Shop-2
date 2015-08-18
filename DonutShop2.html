@@ -1,13 +1,61 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
 	<title>Chris Petrick's Donut Shop Chain | Donuts for People Who Hate Donuts</title>
 </head>
 
 <body>
+<script type="text/javascript">
+console.log ("start");
 
+function Shop(name, minCustHour, maxCustHour, avgDonPerCust, totalHour ) {
+	this.name = name;
+	this.minCustHour = minCustHour;
+	this.maxCustHour = maxCustHour;
+	this.avgDonPerCust = avgDonPerCust;
+	this.totalHour = totalHour;
+	this.totalDonuts = 0;
+	this.hourlyDonuts = [];
+
+	this.donutsPerHour = function(){
+		var range = this.maxCustHour - this.minCustHour;
+		var avgDonPerHour = Math.floor ((Math.random() * range) + this.minCustHour);
+		return avgDonPerHour;
+	}
+	this.donutsPerDay = function(){
+		for (var hour = 0; hour < this.totalHour; hour++) {
+			var donutsforHour = this.donutsPerHour();
+			this.totalDonuts += donutsforHour;
+			this.hourlyDonuts.push(donutsforHour);
+		}
+		console.log(this.totalDonuts);
+	}
+}
+
+var downtownShop = new Shop("Downtown", 8, 43, 4.5, 8);
+var capitolhillShop = new Shop("Capitol Hill", 4, 37, 2, 24);
+var southlakeunionShop = new Shop("South Lake Union", 9, 23, 6.33, 10);
+var wedgewoodShop = new Shop("Wedgewood", 2, 28, 1.25, 7);
+var ballardShop = new Shop("Ballard", 8, 58, 3.75, 10);
+
+downtownShop.donutsPerDay();
+capitolhillShop.donutsPerDay();
+southlakeunionShop.donutsPerDay();
+wedgewoodShop.donutsPerDay();
+ballardShop.donutsPerDay();
+//  1. A method to calculate and display the number of donuts each 
+// 	shop needs to bake per hour and per day.
+
+//  2. The customers per hour should be randomly generated (Links to 
+// 	an external site.) from the range provided for every hour of the day.
+
+//  3. The output should be sent to the console log.
+
+//  4. Using the constructor function, create new objects to represent 
+// 	each location and simulate a days worth of baking.
+
+</script>
 </body>
 
 </html>
