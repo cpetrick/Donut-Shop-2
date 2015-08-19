@@ -1,31 +1,29 @@
 body {
-  background-color: #000000; 
+  background-color: #666666; 
 }
 
 h1 {
-	color: red;
+	color: #29292C;
+  background-color: #666666;
+  text-shadow: 0 0 43px #B2B2B7;
 	text-align: center;
-	font-family: sans-serif;
+  -webkit-text-stroke-width: .01px;
+  -webkit-text-stroke-color: red;
 	font-family: 'Monoton', cursive;
-	font-size: 250%;
-	background-color: #000000;
-	border-top: solid black;
-	border-left: solid black;
-	border-right: solid black;
-	border-bottom: solid black;
-	margin: 0px;
-	text-shadow: 0 0 43px #FFCC00;
+	font-size: 450%;
+  margin: 5px;
+  border-top: 30px;
+  border-bottom: 15px;
 }
 h3 {
-	color: red;
+	color: #29292C;
+  background-color: #666666;
+  text-shadow: 0 0 43px #B2B2B7;
 	text-align: center;
 	font-family: 'Cherry Cream Soda', cursive;
 	font-style: normal;
 	vertical-align: center;
-	background-color: #000000;
 	font-stretch: extra-expanded;
-	margin: 0px;
-	text-shadow: 0 0 13px #FFCC00;
 }
 
 b {
@@ -33,24 +31,21 @@ b {
 	position: relative;
   /*bottom: -25px;*/
 }
-
-#menu {
-	font-family: sans-serif;
-	text-align: center;
-}
-
-#menu li {
-	display: inline;
-	font-family: sans-serif;
+.header {
+  background-color: #333333;
+  color: #CCCCCC;
+  margin-bottom: 25px;
 }
 
 #tr {
 	font-weight: normal;
+
 }
   
 #table {
 	background-color: #0000000;
   margin: 40px;
+  border-radius: 25px;
 }
 th,td {
   width: justify;
@@ -62,7 +57,7 @@ th,td {
 }
 
 thead th {
-  font-family: sans-serif;
+  font-family: 'Source Code Pro';
   border-bottom: .5px solid black;
   border-top: .5px solid black;
   border-right: .5px solid black;
@@ -84,10 +79,10 @@ p {
 footer{
   font-family: 'Cherry Cream Soda', cursive;
   font-size: 15px;
-  color: red;
-  margin: auto;
-  background-color: #000000; 
   text-align: center;
+  color: #29292C;
+  background-color: #666666;
+  text-shadow: 0 0 43px #B2B2B7;
  
 }
 
