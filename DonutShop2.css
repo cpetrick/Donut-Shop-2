@@ -29,7 +29,8 @@ h3 {
 b {
 	font-size: 150%;
 	position: relative;
-  /*bottom: -25px;*/
+/*  -webkit-text-stroke-width: .01px;
+  -webkit-text-stroke-color: red;*/
 }
 .header {
   background-color: #333333;
@@ -45,8 +46,8 @@ b {
 #table {
 	background-color: #0000000;
   margin: 40px;
-  border-radius: 25px;
 }
+
 th,td {
   width: justify;
   height: auto;
@@ -54,6 +55,7 @@ th,td {
   font-size: 15px;
   text-align: right;
   padding-right: 10px;
+  border-radius: 5px;
 }
 
 thead th {
