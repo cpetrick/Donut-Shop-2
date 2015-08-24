@@ -1,24 +1,24 @@
 
 
-<script>
+// <script>
 
-var shop = {
-	name: 'East Side',
-	minCustHour: '8',
-	maxCustHour: '43',
-	avgDonPerCust: '4.5',
+// var shop = {
+// 	name: 'East Side',
+// 	minCustHour: '8',
+// 	maxCustHour: '43',
+// 	avgDonPerCust: '4.5',
 
-	donutsPerHour: function ( {
-		return this.
-	})
-}
-
-
+// 	donutsPerHour: function ( {
+// 		return this.
+// 	})
+// }
 
 
 
 
-</script>
+
+
+// </script>
 
 
 //  1. A method to calculate and display the number of donuts each 

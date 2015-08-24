@@ -25,11 +25,16 @@ h3 {
 	vertical-align: center;
 	font-stretch: extra-expanded;
 }
-
-b {
-	font-size: 150%;
+.locations {
+  color: #29292C;
+  font-size: 20px;
+  -webkit-text-stroke-width: .005px;
+  -webkit-text-stroke-color: red;
+}
+.star {
+	font-size: 250%;
 	position: relative;
-/*  -webkit-text-stroke-width: .01px;
+  /*-webkit-text-stroke-width: .01px;
   -webkit-text-stroke-color: red;*/
 }
 .header {
@@ -71,6 +76,9 @@ thead tr {
   background-color: #DFDFE5;
 }
 
+.dailyTotal {
+  color: red;
+}
 p {
     color: red;
     text-align: center;

@@ -8,7 +8,7 @@
 <script type="text/javascript">
 console.log ("start");
 
-function Shop(name, minCustHour, maxCustHour, avgDonPerCust, totalHour ) {
+function Shop(name, minCustHour, maxCustHour, avgDonPerCust, totalHour, displayColumn ) {
 	this.name = name;
 	this.minCustHour = minCustHour;
 	this.maxCustHour = maxCustHour;
@@ -16,30 +16,35 @@ function Shop(name, minCustHour, maxCustHour, avgDonPerCust, totalHour ) {
 	this.totalHour = totalHour;
 	this.totalDonuts = 0;
 	this.hourlyDonuts = [];
+	this.displayColumn = displayColumn;
+
 
 	this.donutsPerHour = function(){
 		var range = this.maxCustHour - this.minCustHour;
 		var avgDonPerHour = Math.floor ((Math.random() * range) + this.minCustHour);
 		return avgDonPerHour;
 	}
+	// =========HOURS FOR LOOP=============
 	this.donutsPerDay = function(){
 		console.log("Donut Production for " + this.name);
 		for (var hour = 0; hour < this.totalHour; hour++) {
 			var donutsforHour = this.donutsPerHour();
 			this.totalDonuts += donutsforHour;
 			this.hourlyDonuts.push(donutsforHour);
+			$("hour-"+hour+" th:nth-of-type("+this.column+")").html(donutsforHour);
 		console.log("   Donuts for hour " + hour + " are " + donutsforHour);
+			
 		}
 		console.log("Total Donuts per day for " + this.name + " is " + this.totalDonuts + "\n");
 		
 	}
 }
 
-var downtownShop = new Shop("Downtown", 8, 43, 4.5, 8);
-var capitolhillShop = new Shop("Capitol Hill", 4, 37, 2, 24);
-var southlakeunionShop = new Shop("South Lake Union", 9, 23, 6.33, 10);
-var wedgewoodShop = new Shop("Wedgewood", 2, 28, 1.25, 7);
-var ballardShop = new Shop("Ballard", 8, 58, 3.75, 10);
+var downtownShop = new Shop("Downtown", 8, 43, 4.5, 8, 1);
+var capitolhillShop = new Shop("Capitol Hill", 4, 37, 2, 24, 2);
+var southlakeunionShop = new Shop("South Lake Union", 9, 23, 6.33, 10, 3);
+var wedgewoodShop = new Shop("Wedgewood", 2, 28, 1.25, 7, 4);
+var ballardShop = new Shop("Ballard", 8, 58, 3.75, 10, 5);
 
 downtownShop.donutsPerDay();
 capitolhillShop.donutsPerDay();
@@ -59,7 +64,7 @@ ballardShop.donutsPerDay();
 		<h1>Donut Hater</h1>
 		<link href='http://fonts.googleapis.com/css?family=Cherry+Cream+Soda' rel='stylesheet' type='text/css'>
 		<h3>Five Locations To Serve You</h3>
-	    <h3>DOWNTOWN <b>&#9733</b> CAPITOL HILL <b>&#9733</b> SOUTH LAKE UNION <b>&#9733</b> WEDGEWOOD <b>&#9733</b> BALLARD</h3>
+	    <h3 class = "locations">DOWNTOWN <b class = "stars">&#9733</b> CAPITOL HILL <b>&#9733</b> SOUTH LAKE UNION <b>&#9733</b> WEDGEWOOD <b>&#9733</b> BALLARD</h3>
 	
 
 <div id="table">
@@ -75,15 +80,15 @@ ballardShop.donutsPerDay();
 				<th scope="col">Wedgewood</th>
 				<th scope="col">Ballard</th>
 			</tr>
-			<tr>
+			<tr id="hour-0">
 				<th scope="row">12:00am</th>
-				<th></th>
-				<th></th>
-				<th></th>
-				<th></th>
-				<th></th>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+				<th>5</th>
 			</tr>
-			<tr>
+			<tr id="hour-1">
 				<th scope="row">1:00am</th>
 				<th></th>
 				<th></th>
@@ -91,7 +96,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-2">
 				<th scope="row">2:00am</th>
 				<th></th>
 				<th></th>
@@ -99,7 +104,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-3">
 				<th scope="row">3:00am</th>
 				<th></th>
 				<th></th>
@@ -107,7 +112,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-4">
 				<th scope="row">4:00am</th>
 				<th></th>
 				<th></th>
@@ -115,7 +120,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-5">
 				<th scope="row">5:00am</th>
 				<th></th>
 				<th></th>
@@ -123,7 +128,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-6">
 				<th scope="row">6:00am</th>
 				<th></th>
 				<th></th>
@@ -131,7 +136,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-7">
 				<th scope="row">7:00am</th>
 				<th></th>
 				<th></th>
@@ -139,7 +144,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-8">
 				<th scope="row">8:00am</th>
 				<th></th>
 				<th></th>
@@ -147,7 +152,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-9">
 				<th scope="row">9:00am</th>
 				<th></th>
 				<th></th>
@@ -155,7 +160,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-10">
 				<th scope="row">10:00am</th>
 				<th></th>
 				<th></th>
@@ -163,7 +168,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-11">
 				<th scope="row">11:00am</th>
 				<th></th>
 				<th></th>
@@ -171,7 +176,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-12">
 				<th scope="row">12:00pm</th>
 				<th></th>
 				<th></th>
@@ -179,7 +184,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-13">
 				<th scope="row">1:00pm</th>
 				<th></th>
 				<th></th>
@@ -187,7 +192,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-14">
 				<th scope="row">2:00pm</th>
 				<th></th>
 				<th></th>
@@ -195,7 +200,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-15">
 				<th scope="row">3:00pm</th>
 				<th></th>
 				<th></th>
@@ -203,7 +208,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-16">
 				<th scope="row">4:00pm</th>
 				<th></th>
 				<th></th>
@@ -211,7 +216,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-17">
 				<th scope="row">5:00pm</th>
 				<th></th>
 				<th></th>
@@ -219,7 +224,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-18">
 				<th scope="row">6:00pm</th>
 				<th></th>
 				<th></th>
@@ -227,7 +232,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-19">
 				<th scope="row">7:00pm</th>
 				<th></th>
 				<th></th>
@@ -235,7 +240,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-20">
 				<th scope="row">8:00pm</th>
 				<th></th>
 				<th></th>
@@ -243,7 +248,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-21">
 				<th scope="row">9:00pm</th>
 				<th></th>
 				<th></th>
@@ -251,7 +256,7 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-22">
 				<th scope="row">10:00pm</th>
 				<th></th>
 				<th></th>
@@ -259,8 +264,16 @@ ballardShop.donutsPerDay();
 				<th></th>
 				<th></th>
 			</tr>
-			<tr>
+			<tr id="hour-23">
 				<th scope="row">11:00pm</th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr class = "dailyTotal">
+				<th scope="row">Daily Total</th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -275,9 +288,6 @@ ballardShop.donutsPerDay();
 <script type="text/javascript" src="DonutShop.js"></script>
 
 <footer>&copy Donut Hater Donuts &#9733 971.555.9876 &#9733 info@donuthater.com</footer>
-
-
-
 
 </body>
 
